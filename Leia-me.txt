@@ -1,0 +1,4 @@
+So baixar o wamp server 
+instalar
+colcoar essa pasta www onde foi instalado o wampserver 
+rodar o wamp server
