@@ -2,3 +2,5 @@ So baixar o wamp server
 instalar
 colcoar essa pasta www onde foi instalado o wampserver 
 rodar o wamp server
+
+Nao esqueça de importa o banco de dados "wp.sql" 
