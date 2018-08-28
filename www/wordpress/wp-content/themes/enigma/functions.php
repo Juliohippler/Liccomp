@@ -9,6 +9,7 @@
 	define('WL_TEMPLATE_DIR_CORE' , WL_TEMPLATE_DIR . '/core');
 	require( WL_TEMPLATE_DIR_CORE . '/menu/default_menu_walker.php' );
 	require( WL_TEMPLATE_DIR_CORE . '/menu/weblizar_nav_walker.php' );
+	
 	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here	
 	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );	
 	require(dirname(__FILE__).'/customizer.php');
@@ -36,6 +37,12 @@
 			'custom_css'=>'',
 			'excerpt_blog'=>'55',
 			'home_reorder'=>'',
+			'upload_image_favicon'=>'',
+			'snoweffect'=>'',
+			'read_more'=>__('Read More', 'enigma' ),
+			'autoplay'=>'1',
+			'breadcrumb'=>'1',
+			'box_layout'=>'1',
 
 			'slider_image_speed' => '',
 			'slide_image_1' => $ImageUrl,
@@ -52,7 +59,8 @@
 			'slide_title_3' => __('Contrary to popular ', 'enigma' ),
 			'slide_desc_3' => __('Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi', 'enigma' ),
 			'slide_btn_text_3' => __('Read More', 'enigma' ),
-			'slide_btn_link_3' => '#',			
+			'slide_btn_link_3' => '#',
+			'slider_anim'=>'',
 			// Footer Call-Out
 			'fc_home'=>'1',			
 			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'enigma' ),
@@ -116,6 +124,7 @@
 			'blog_home' => '1',
 			'blog_title'=>__('Latest Blog', 'enigma' ),
 			'blog_speed'=>'2000',
+			'blog_category'=>'',
 			
 			//Google font style
 			'main_heading_font' => 'Open Sans',
@@ -194,7 +203,8 @@ add_theme_support( 'custom-header', $args );
 	'admin-preview-callback' => '',
 );
 add_theme_support( 'custom-header', $defaults );
-		
+
+add_theme_support( 'customize-selective-refresh-widgets' );
 		
 		/*
 		 * This theme styles the visual editor to resemble the theme style,
@@ -379,7 +389,7 @@ endif;
 	
 	
 	//PAGINATION
-		function weblizar_pagination($pages = '', $range = 2)
+		/*function weblizar_pagination($pages = '', $range = 2)
 {  
      $showitems = ($range * 2)+1;  
 
@@ -399,22 +409,22 @@ endif;
      if(1 != $pages)
      {
          echo "<div class='enigma_blog_pagination'><div class='enigma_blog_pagi'>";
-         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
-         if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";
+         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link(1))."'>&laquo;</a>";
+         if($paged > 1 && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link($paged - 1))."'>&lsaquo;</a>";
 
          for ($i=1; $i <= $pages; $i++)
          {
              if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
              {
-                echo ($paged == $i)? "<a class='active'>".$i."</a>":"<a href='".get_pagenum_link($i)."'>".$i."</a>";
+                echo ($paged == $i)? "<a class='active'>".esc_attr($i)."</a>":"<a href='".esc_url(get_pagenum_link($i))."'>".esc_attr($i)."</a>";
              }
          }
 
-         if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";  
-         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
+         if ($paged < $pages && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link($paged + 1))."'>&rsaquo;</a>";  
+         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link($pages))."'>&raquo;</a>";
          echo "</div></div>";
      }
-}
+} */
 	/*===================================================================================
 	* Add Author Links
 	* =================================================================================*/
@@ -460,10 +470,7 @@ endif;
 	</div>	
 <?php
 	}
-if (is_admin()) {
-	require_once('core/admin/admin-themes.php');
-	
-}
+
 
 
 //Plugin Recommend
@@ -489,20 +496,143 @@ function enigma_plugin_recommend(){
 	);
     tgmpa( $plugins );
 }
-add_action( 'admin_notices', 'enigma_rating' );
-function enigma_rating() {
-    ?>
-    <div class="notice error my-acf-notice is-dismissible notice-box" >
-        <p><?php _e( 'Thank You for using Weblizar theme, Please give your rating on Enigma theme. Your rating help us to improve our theme' ); ?></p>
-		<p style="font-size:17px;"> 
-			<a style="color: #fff;background: #ec635b;padding: 3px 7px 4px 6px;border-radius: 5px;" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank"><?php _e('Rate the theme','enigma') ?></a>
-		</p>
-    </div>
-    <?php
+function enigma_custom_admin_notice() {
+	wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-rating.css');
+    wp_enqueue_style( 'custom_admin_css' );
+	wp_enqueue_style('custom-bootstrap',  get_template_directory_uri() .'/core/admin/bootstrap/css/bootstrap.css');
+	wp_enqueue_script('custom-bootstrap-js',get_template_directory_uri() .'/core/admin/bootstrap/js/bootstrap.js');
+	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome-4.7.0/css/font-awesome.css');
+	$wl_th_info = wp_get_theme(); 
+	$currentversion = str_replace('.','',(esc_html( $wl_th_info->get('Version') )));
+	$isitdismissed = 'enigma_notice_dismissed'.$currentversion;
+	if ( !get_user_meta( get_current_user_id() , $isitdismissed ) ) { ?>
+		<!---our-product-features--->
+		 
+	
+	<div class="our-product-features">	
+	
+		<!--<div class="col-md-2">
+			<ul class="nav nav-tabs features-tabs">
+				<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+				<li><a data-toggle="tab" href="#wb_theme">Theme </a></li>
+				<li><a data-toggle="tab" href="#wb_plugin">Plugin </a></li>
+				<li><a data-toggle="tab" href="#menu3">Rating Us</a></li>
+				<li><a data-toggle="tab" href="#offer">Offers</a></li>
+			</ul>
+		</div>-->
+		
+		<div class="col-md-12">
+		<a class="dismiss" href="?-notice-dismissed<?php echo esc_attr($currentversion);?>"><?php esc_html_e('Click here to dismiss This Ad.','enigma');?></strong></a>
+		  <div class="tab-content features-content">
+			<div id="home" class="tab-pane fade in active">
+				
+				
+				<div class="oure-details">
+				  <h3>  <span> Enigma Premium / Advanced Premium / Parallax Premium  </span></h3>
+				  <div class="col-md-12 main-div"> 
+					<div class="col-md-4 theme-img">
+						<div class="wb_products"> 
+							<div class="wb_products-inner"> 
+								<a href="https://weblizar.com/themes/enigma-premium/" target="_blank"> 
+								<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/Enigma1.jpg" class="img-responsive">  
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+					<div class="col-md-6">
+						<ul class="enigma-feature">
+							<li><i class="fa fa-check"></i> 03 Home Page</li>
+							<li><i class="fa fa-check"></i> Parallax Design</li>
+							<li><i class="fa fa-check"></i> Theme Option Panel</li>
+							<li><i class="fa fa-check"></i> 2 Service Page Template</li>
+							<li><i class="fa fa-check"></i> Custom Shortcodes</li>
+							<li><i class="fa fa-check"></i> 6 Portfolio Layout</li>
+						</ul>
+						<h4 class="getpro"> <a href="https://weblizar.com/themes/enigma-premium/" target="_blank"> Get Enigma Premium </a>							
+						</h4> 
+					</div>
+					<div class="col-md-6">
+						<ul class="enigma-feature">
+							<li><i class="fa fa-check"></i> Unlimited Color Skins</li>
+							<li><i class="fa fa-check"></i> Mega Menu Support</li>
+							
+							<li><i class="fa fa-check"></i> 10 Page Layout</li>
+							<li><i class="fa fa-check"></i> 6 Blog Layout</li>
+							<li><i class="fa fa-check"></i> Multilingual</li><li>
+							<i class="fa fa-check"></i> Complete Documentation
+						</li>
+						</ul>
+						
+					</div>				
+						
+					</div>
+						
+					</div>
+					
+				</div>
+				<div class="oure-details">
+				<!--<h3>  <span> Review and Rating  </span></h3>-->
+				
+				  <!-- rating -->
+				  <div class="col-md-12 main-div">
+				  <div class="notice-box notice-success is-dismissible flat_responsive_notice" data-dismissible="disable-done-notice-forever">
+						<div>
+						<p>	
+							<?php  esc_html_e('Thank you for using the free version of ','enigma'); ?>
+							<?php echo esc_html( $wl_th_info->get('Name') );?> - 
+							<?php echo esc_html( $wl_th_info->get('Version') );
+							 ?>
+							<?php esc_html_e('Please give your reviews and ratings on ','enigma'); echo esc_attr($wl_th_info->get('Name')); esc_html_e(' theme. Your ratings will help us to improve our themes.', 'enigma'); ?>
+							<script type="text/javascript">alert(<?php echo esc_attr($isitdismissed)?>);</script>
+							<?php if($wl_th_info->get('Name')=="Enigma") { ?>
+							<div class="">
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Greenigma") { ?>
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/greenigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Inferno") { ?>
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/inferno/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">		
+							<?php } else { ?>
+							<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/cista/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">	
+							<?php } ?>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+								<span class="dashicons dashicons-star-filled"></span>
+							</a>
+							</div>
+						</p>
+						</div>
+				</div>
+				</div>
+				  <!-- rating -->
+				</div>
+			</div>
+		  </div>
+		</div>
+	</div>
+			
+		
+<?php
+	}
+ }
+add_action('admin_notices', 'enigma_custom_admin_notice');
+
+function enigma_notice_dismissed() {
+	$wl_th_info = wp_get_theme(); 
+	$currentversion = str_replace('.','',(esc_html( $wl_th_info->get('Version') )));
+	$dismissurl = '-notice-dismissed'.$currentversion;
+	$isitdismissed = 'enigma_notice_dismissed'.$currentversion;
+    $user_id = get_current_user_id();
+    if ( isset( $_GET[$dismissurl] ) )
+        add_user_meta( $user_id, $isitdismissed, 'true', true );
 }
-function enqueue_custom_admin_style() {
-        wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-rating.css');
-        wp_enqueue_style( 'custom_admin_css' );
+add_action( 'admin_init', 'enigma_notice_dismissed' );
+
+$theme_options = weblizar_get_options();
+if($theme_options['snoweffect'] =='1'){
+	function snow_script() {
+	wp_dequeue_script('snow', get_template_directory_uri() .'/js/snowstorm.js');
+	}
+	add_action( 'wp_enqueue_scripts', 'snow_script' );
 }
-add_action( 'admin_enqueue_scripts', 'enqueue_custom_admin_style' );
 ?>

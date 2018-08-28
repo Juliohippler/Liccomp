@@ -1,10 +1,13 @@
-<?php get_header(); ?>
+<?php get_header(); 
+$wl_theme_options = weblizar_get_options(); 
+if($wl_theme_options['breadcrumb']!='') { ?>
 <div class="enigma_header_breadcrum_title">	
 	<div class="container">
 		<div class="row">
 		<?php if(have_posts()) :?>
 			<div class="col-md-12">
-			<h1><?php printf( __( 'Author Archives: %s', 'enigma' ), '<span class="vcard">'. get_the_author() .'</span>' ) ; ?>
+			<?php /* translators: %s: author name. */ ?>
+			<h1><?php printf( esc_html__( 'Author Archives: %s', 'enigma' ), '<span class="vcard">'. get_the_author() .'</span>' ) ; ?>
 			</h1>
 			</div>
 		<?php endif; ?>
@@ -12,6 +15,7 @@
 		</div>
 	</div>	
 </div>
+<?php } ?>
 <div class="container">	
 	<div class="row enigma_blog_wrapper">
 	<div class="col-md-8">

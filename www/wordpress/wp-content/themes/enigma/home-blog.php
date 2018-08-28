@@ -15,10 +15,15 @@ if($wl_theme_options['blog_title'] !='') { ?>
 	<div class="row" id="enigma_blog_section">
 	<?php 	if ( have_posts()) : 			
 			$posts_count =wp_count_posts()->publish;
-			$args = array( 'post_type' => 'post','posts_per_page' => $posts_count ,'ignore_sticky_posts' => 1);		
+			if($wl_theme_options['blog_category']) {
+				$category = $wl_theme_options['blog_category'];
+				$args = array( 'post_type' => 'post','posts_per_page' => $posts_count ,'ignore_sticky_posts' => 1, 'cat' => $category);		
+			} else {
+			$args = array( 'post_type' => 'post','posts_per_page' => $posts_count ,'ignore_sticky_posts' => 1);	 }	
 			$post_type_data = new WP_Query( $args );
 			while($post_type_data->have_posts()):
-			$post_type_data->the_post(); ?>
+			$post_type_data->the_post();
+			?>
 			<div class="col-md-4 col-sm-12 scrollimation scale-in d2 pull-left">
 			<div class="enigma_blog_thumb_wrapper">
 				<div class="enigma_blog_thumb_wrapper_showcase">					
@@ -38,11 +43,11 @@ if($wl_theme_options['blog_title'] !='') { ?>
 				<?php if(get_the_tag_list() != '') { ?>
 				<p class="enigma_tags"><?php the_tags('Tags :&nbsp;', '', '<br />'); ?></p>
 				<?php } ?>
-				<p><?php echo substr(get_the_excerpt(),0,$wl_theme_options['excerpt_blog'] ); ?></p>
-				<a href="<?php the_permalink(); ?>" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php _e('Read More','enigma'); ?></a>
+				<p><?php echo esc_attr(substr(get_the_excerpt(),0,$wl_theme_options['excerpt_blog'] )); ?></p>
+				<a href="<?php the_permalink(); ?>" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php if($wl_theme_options['read_more']) { echo esc_attr($wl_theme_options['read_more']); } ?></a>
 				<div class="enigma_blog_thumb_footer">
 					<ul class="enigma_blog_thumb_date">
-						<li><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a></li>
+						<li><i class="fa fa-user"></i><a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) )); ?>"><?php echo get_the_author(); ?></a></li>
 						<li><i class="fa fa-clock-o"></i>
 						<?php if ( ('d M  y') == get_option( 'date_format' ) ) : ?>
 						<?php echo get_the_date('F d ,Y'); ?>
@@ -60,7 +65,7 @@ if($wl_theme_options['blog_title'] !='') { ?>
 			<div class="col-md-4 col-sm-12 scrollimation scale-in d2 pull-left">
 			<div class="enigma_blog_thumb_wrapper">
 				<div class="enigma_blog_thumb_wrapper_showcase">
-					<img  alt="Enigma" src="<?php echo WL_TEMPLATE_DIR_URI ?>/images/wall/img(11).jpg">
+					<img  alt="Enigma" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/wall/img(11).jpg">
 					<div class="enigma_blog_thumb_wrapper_showcase_overlay">
 						<div class="enigma_blog_thumb_wrapper_showcase_overlay_inner ">
 							<div class="enigma_blog_thumb_wrapper_showcase_icons">
@@ -69,21 +74,21 @@ if($wl_theme_options['blog_title'] !='') { ?>
 						</div>
 					</div>
 				</div>
-				<h2><a href="#"><?php _e('NO Post','enigma'); ?></a></h2>
+				<h2><a href="#"><?php esc_html_e('NO Post','enigma'); ?></a></h2>
 				
 				<div class="enigma_tags">
-					<?php _e('Tags :&nbsp;','enigma'); ?>
-					<a href="#"><?php _e('Bootstrap','enigma'); ?></a>
-					<a href="#"><?php _e('HTML5','enigma'); ?></a>
+					<?php esc_html_e('Tags :&nbsp;','enigma'); ?>
+					<a href="#"><?php esc_html_e('Bootstrap','enigma'); ?></a>
+					<a href="#"><?php esc_html_e('HTML5','enigma'); ?></a>
 				   
 				</div>
-				<p><?php _e('Add You Post To show post here..','enigma'); ?></p>
-				<a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php _e('Read More','enigma'); ?></a>
+				<p><?php esc_html_e('Add You Post To show post here..','enigma'); ?></p>
+				<a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php esc_html_e('Read More','enigma'); ?></a>
 				<div class="enigma_blog_thumb_footer">
 					<ul class="enigma_blog_thumb_date">
-						<li><i class="fa fa-user"></i><a href="#"><?php _e('By Admin','enigma'); ?></a></li>
-						<li><i class="fa fa-clock-o"></i><?php _e(' November 9 2013','enigma'); ?></li>
-						<li><i class="fa fa-comments-o"></i><a href="#"><?php _e('10','enigma'); ?></a></li>
+						<li><i class="fa fa-user"></i><a href="#"><?php esc_html_e('By Admin','enigma'); ?></a></li>
+						<li><i class="fa fa-clock-o"></i><?php esc_html_e(' November 9 2013','enigma'); ?></li>
+						<li><i class="fa fa-comments-o"></i><a href="#"><?php esc_html_e('10','enigma'); ?></a></li>
 					</ul>
 				</div>
 			</div>
@@ -98,7 +103,6 @@ if($wl_theme_options['blog_title'] !='') { ?>
 	</div>
 </div>    
 <script>
-var wl_caroufredsel = function () {
                  
                // jQuery CarouFredSel  For blog               
                 
@@ -107,10 +111,10 @@ var wl_caroufredsel = function () {
                     responsive: true,
                    scroll : {
                         items : 1,
-                        duration : <?php echo $wl_theme_options['blog_speed'] ?>,
+                        duration : <?php echo esc_attr($wl_theme_options['blog_speed']) ?>,
                         timeoutDuration : 2000
                     },
-                    circular: true,
+                    circular: <?php if($wl_theme_options['autoplay']=='1') { ?> true <?php } else { ?> false <?php } ?>,
                     direction: 'left',
                     items: {
                         height: 'variable',
@@ -123,14 +127,7 @@ var wl_caroufredsel = function () {
                      prev: '#port-prev',
                     next: '#port-next',
                     auto: {
-                        play: true
-                    }
+                        play: <?php if($wl_theme_options['autoplay']=='1') { ?> true <?php } else { ?> false <?php } ?>
+                    } 
                 });
-        }
-        jQuery(window).resize(function () {
-                wl_caroufredsel();
-            });   
-            jQuery(window).load(function () {
-                wl_caroufredsel();
-            });    
 </script>

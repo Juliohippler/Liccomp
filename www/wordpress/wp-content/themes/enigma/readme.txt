@@ -6,6 +6,73 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.5 [25-07-2018]
+1. Minor issue fixed.
+
+@Version: 4.4 [17-07-2018]
+1. Google fonts added in typography option.
+
+@Version: 4.3 [26-06-2018]
+1. Go Enigma pro option added in customizer.
+2. Rating option added on admin panel.
+
+@Version: 4.2 [19-06-2018]
+1. FontAwesome library updated version 4.7.0
+2. Go Enigma Premium option added on admin panel.
+
+@Version: 4.1.9 [07-06-2018]
+1. Bug Fix
+
+@Version: 4.1.8 [19-05-2018]
+1. screen-shot image change
+2. Image url change as per theme review guide line
+
+
+@Version: 4.1.7 [09-05-2018]
+1. Box Layout option added.
+
+@Version: 4.1.6 [23-04-2018]
+1. Slider Animation option added.
+2. Breadcrumb option added.
+
+@Version: 4.1.5 [02-04-2018]
+1. Snow effect issue fixed.
+2. Updated Pro Themes and Plugins Page.
+
+@Version: 4.1.4 [24-03-2018]
+1. Autoplay Option added in blog options. 
+2. Read More button option added in blog options. 
+
+@Version: 4.1.3 [12-03-2018]
+1. Author name added for single page.
+2. Minor changes in rate banner. 
+
+@Version: 4.1.2 [27-02-2018]
+1. Description Updates.
+
+@Version: 4.1.1 [08-02-2018]
+1.Minor Change.
+
+@Version: 4.1 [03-01-2018]
+1. Category option added for blog.
+
+@Version: 4.0 [21-12-2017]
+1. Review Request banner dismiss option added.
+
+@Version: 3.9 [08-12-2017]
+1. Snow effect option added.
+
+@Version: 3.8 [05-12-2017]
+1. Animation feature added in Slider Option.
+2. Snow effect added.
+
+@Version: 3.7 [16-11-2017]
+1. Minor changes in functions.php
+
+@Version: 3.6 [31-10-2017]
+1. Quick edit option added.
+2. menu walker changed.
+
 @Version: 3.5 [23-09-2017]
 1. Editor in Service section added.
 2. HomePage Section manager  added.
@@ -114,7 +181,7 @@ CHANGE-LOG:
 4. Footer-Call-Out icon setting added.
 
 @Version: 2.2 [17/10/2015]
-1. Mobils Menus Fix.
+1. Mobile Menus Fix.
 
 @Version: 2.1 [08/10/2015]
 1. Parallax Layout in *Premium Theme added..
@@ -190,7 +257,7 @@ CHANGE-LOG:
 @Version: 1.7.1[16/01/2015]
 1. Title Repetition Removed.
 2. Unused JS file removed.
-3. Pagw with Left Sidebar added. 
+3. Page with Left Sidebar added. 
 
 @Version: 1.7 [05/01/15]
 1. Editor added in Theme-Options.
@@ -302,10 +369,14 @@ Enigma_Theme_Script | V 1.0 | weblizar
 Theme-Footer-Script | V 1.0 | weblizar 
 (c) 2014  | Licensed under the MIT license and GPL license.
 /*****BUNDELED CSS***/
-Font Awesome CSS |  v4.3.0 | 
+Font Awesome CSS |  v4.7.0 | 
 Copyright 2015  Dave Gandy.,
 Licensed under MIT license :http://opensource.org/licenses/MIT
 Source:http://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.3.0.zip
+
+Font Awesome CSS |  v 5.0.13 | 
+Copyright 2015  Dave Gandy.,
+Licensed under MIT license :http://opensource.org/licenses/MIT
 
 Bootstrap CSS |  v3.1.1 | 
 Copyright 2011-2014 Twitter, Inc
@@ -335,9 +406,12 @@ Licensed under GPL
 Images Taken from :
 pixabay.com
 
+Image Header : https://pixabay.com/en/snow-nature-panoramic-winter-3193865/
+
 Image Slide 1: http://pixabay.com/en/new-york-city-brooklyn-bridge-night-336475/
-Image Slide 2:http://pixabay.com/en/tractor-field-landscape-campaign-396477/
+Image Slide 2:https://pixabay.com/en/fantasy-landscape-mountains-human-2925250/
 Image Slide 3:http://pixabay.com/en/nice-c%C3%B4te-d---azur-france-398051/
+
 
 =================Portfolio Images URL ====================
 http://pixabay.com/en/girl-portrait-outdoors-pretty-344335/
