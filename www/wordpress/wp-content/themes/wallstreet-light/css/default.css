@@ -530,7 +530,7 @@ article.format-aside .aside { background: none repeat scroll 0 0 #d2e0f9; border
 .navbar .navbar-nav > .active > a:focus, .navbar .navbar-nav > .open > a,
 .navbar .navbar-nav > .open > a:hover,
 .navbar .navbar-nav > .open > a:focus, .navbar .navbar-nav > li > a:hover,
-.navbar .navbar-nav > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .blog-pagination a:hover, .blog-pagination a.active, .page-links a:hover, .page-links a.active, .flex_btn, .pagetitle-separator-border, .other-service-area:hover i, .home-portfolio-showcase-overlay, .proejct-btn a:hover, .home-blog-btn a, .tweet-btn a:hover, .post-date, .blog-post-date span.date a, .sidebar-widget-tags a:hover, .tagcloud a:hover, .search_btn, .search_error, .search_heading, .sidebar-widget-tags a:hover, .blog-author-social li:hover, .blogdetail-btn a , #blogdetail_btn , .wallstreet_page_heading, .post-password-form input[type="submit"], a.blog-btn {background-color: #00c2a9 !important;}
+.navbar .navbar-nav > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .blog-pagination a:hover, .blog-pagination a.active, .page-links a:hover, .page-links a.active, .flex_btn, .pagetitle-separator-border, .other-service-area:hover i, .home-portfolio-showcase-overlay, .proejct-btn a:hover, .home-blog-btn a, .tweet-btn a:hover, .post-date, .blog-post-date span.date a, .sidebar-widget-tags a:hover, .tagcloud a:hover, .search_btn, .search_error, .search_heading, .sidebar-widget-tags a:hover, .blog-author-social li:hover, .blogdetail-btn a , #blogdetail_btn , .wallstreet_page_heading, .post-password-form input[type="submit"], a.blog-btn, .wpcf7-submit {background-color: #00c2a9 !important;}
 
 .header-top-area, .sidebar-widget-tab > .active a, .pagetitle-separator-box {
 	background: none repeat scroll 0 0 #00c2a9;
@@ -569,4 +569,72 @@ article.format-aside .aside { background: none repeat scroll 0 0 #d2e0f9; border
     background-color: transparent !important;
     color: #00c2a9 !important;
 	}
+}
+
+/* Contact Form 7 */
+.wpcf7 p { color: #2a2c33; margin-top: 10px; }
+.wpcf7-text, .wpcf7-file, .wpcf7-number, .wpcf7-date, .wpcf7-select, .wpcf7-quiz{
+	color: #2a2c33;
+    border: 1px solid #e9e9e9;
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    font-family: 'Roboto';
+    font-weight: 400;
+    height: 46px;
+    padding: 6px 12px;
+    font-size: 15px;
+    line-height: 20px;
+    border-radius: 0px;
+    margin-bottom: 20px;
+}
+.wpcf7-file, .wpcf7-number, .wpcf7-date, .wpcf7-select, .wpcf7-quiz { width: 34%; }
+.wpcf7-file { padding: 12px; }
+.wpcf7-textarea {
+	border-radius: 0;
+	border: 1px solid #e9e9e9;
+    display: inline-block;
+    font-family: 'Roboto';
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 14px;
+    height: 46px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    padding: 6px 12px;
+    vertical-align: middle;
+    width: 100%;
+    height: 150px;
+}
+.wpcf7-submit {
+	color: #FFFFFF;
+    display: inline-block;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    border-radius: 3px;
+    margin-bottom: 0;
+    padding: 12px 24px;
+    text-align: center;
+    transition: all 0.4s ease 0s;
+    border: none;
+}
+.wpcf7-form-control-wrap {
+    position: relative;
+    display: block;
+    padding: 5px 0 0;
+}
+span.wpcf7-not-valid-tip
+{
+font-family: 'Roboto';
+font-weight:400;
+font-size:14px;
+}
+div.wpcf7-validation-errors {
+    border: 2px solid #eee;
+	font-family: 'Roboto';
+	font-weight:400;
+	font-size:14px;
 }

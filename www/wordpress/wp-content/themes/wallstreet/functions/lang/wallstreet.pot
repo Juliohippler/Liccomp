@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Wallstreet\n"
-"POT-Creation-Date: 2017-05-30 11:30+0530\n"
-"PO-Revision-Date: 2017-05-30 11:29+0530\n"
+"POT-Creation-Date: 2018-06-11 18:02+0530\n"
+"PO-Revision-Date: 2018-06-11 18:02+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -53,12 +53,12 @@ msgstr ""
 msgid "Blog Archive"
 msgstr ""
 
-#: archive.php:57 author.php:46 category.php:48 functions.php:87
+#: archive.php:57 author.php:46 category.php:48 functions.php:90
 #: index-blog.php:46 index.php:52 search.php:50 tag.php:47
 msgid "Read More"
 msgstr ""
 
-#: archive.php:58 author.php:47 category.php:49 functions.php:53
+#: archive.php:58 author.php:47 category.php:49 functions.php:56
 #: functions/breadcrumbs/breadcrumbs.php:98 index.php:53 single.php:31
 #: tag.php:48
 msgid "Page"
@@ -543,31 +543,31 @@ msgstr ""
 msgid "Send Message"
 msgstr ""
 
-#: functions.php:70
+#: functions.php:73
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:95 functions.php:97
+#: functions.php:98 functions.php:100
 msgid "Sidebar widget area"
 msgstr ""
 
-#: functions.php:105 functions.php:107
+#: functions.php:108 functions.php:110
 msgid "Footer widget area"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:148
 msgid "Reply"
 msgstr ""
 
-#: functions.php:152
+#: functions.php:155
 msgid "Posted on &nbsp;"
 msgstr ""
 
-#: functions.php:154
+#: functions.php:157
 msgid "Edit"
 msgstr ""
 
-#: functions.php:159
+#: functions.php:162
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -704,10 +704,10 @@ msgstr ""
 msgid "Footer copyright settings"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:15
+#: functions/customizer/customizer-copyright.php:15 theme_setup_data.php:88
 #, php-format
 msgid ""
-"Copyright @ 2014 - WALL STREET Designed by <a href=\"%1$s\" target=\"_blank"
+"Copyright @ 2018 - WALL STREET Designed by <a href=\"%1$s\" target=\"_blank"
 "\">Webriti</a>."
 msgstr ""
 
@@ -828,6 +828,14 @@ msgstr ""
 msgid "Homepage blog section description"
 msgstr ""
 
+#: functions/customizer/customizer-help.php:4
+msgid "HELP"
+msgstr ""
+
+#: functions/customizer/customizer-help.php:17
+msgid "THEME SUPPORT"
+msgstr ""
+
 #: functions/customizer/customizer-home.php:8
 msgid "Header settings"
 msgstr ""
@@ -935,7 +943,7 @@ msgid "Homepage portfolio four"
 msgstr ""
 
 #: functions/customizer/customizer-project.php:283
-msgid "Add More Project"
+msgid "Add More Projects"
 msgstr ""
 
 #: functions/customizer/customizer-project.php:296
@@ -1039,6 +1047,10 @@ msgstr ""
 
 #: functions/customizer/customizer-social.php:156
 msgid "YouTube URL"
+msgstr ""
+
+#: functions/customizer/customizer-social.php:176
+msgid "Instagram URL"
 msgstr ""
 
 #: functions/customizer/customizer-template.php:5
@@ -1378,19 +1390,12 @@ msgstr ""
 msgid "Responsive designs"
 msgstr ""
 
-#: theme_setup_data.php:87
-#, php-format
-msgid ""
-"Copyright @ 2017 - WALL STREET Designed by <a href=\"%1$s\" target=\"_blank"
-"\">Webriti</a>."
-msgstr ""
-
 #. Theme Name of the plugin/theme
 msgid "Wallstreet"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://webriti.com/wallstreet-lite-version-details-page/"
+msgid "https://webriti.com/wallstreet-lite-version-details-page/"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1398,5 +1403,5 @@ msgid "webriti"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://www.webriti.com"
+msgid "https://www.webriti.com"
 msgstr ""

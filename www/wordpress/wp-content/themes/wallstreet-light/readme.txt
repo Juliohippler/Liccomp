@@ -3,6 +3,8 @@ A Business theme which is ideal for creating a corporate / business website. Wal
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.2.5.6
+1. Fixed cf7 styling issue.
 @Version 1.2.5.5
 1. Fixed slide text responsive issue.
 @Version 1.2.5.4

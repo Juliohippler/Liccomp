@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Wallstreet package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-08-03 18:01:51+0000\n"
+"PO-Revision-Date: 2018-01-24 14:36:54+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,10 +11,6 @@ msgstr ""
 "Language: pt_BR\n"
 "Project-Id-Version: Themes - Wallstreet\n"
 
-#. Description of the plugin/theme
-msgid "WallStreet is a Business WordPress Theme that contains many features for customizing your website as you need. Already, thousands of users are enjoying this theme because it is designed for multiple businesses like corporates, law firms, digital media agencies, architecture firms, personal blogs, portfolios and freelancer websites. The theme is developed using Bootstrap 3 CSS framework which makes it friendly for all devices such as mobiles, tablets, and laptops, etc. In WallStreet Lite, you can easily set a Featured Banner / Slide, Social Icons in the header, Contact Information, Services, Portfolio, and a 4-column widgetized footer. Several page templates are also added: Homepage and a Full Width page template. In the premium version, you will get 2 color skins (Lite and Dark), 10 predefined color schemes, a feature for creating your own custom color scheme, an eye-catching slider, and Services, Testimonials, Portfolio, Clients / Sponsors, Blog Layouts, Layout Manager and Latest News. You will also get various page templates including About, Services, Portfolio, Blog and Contact Us. The theme has support for popular plugins such as WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium versions of WallStreet theme come with various locales. Check the premium version theme demo at http://webriti.com/demo/wp/wallstreet"
-msgstr "O WallStreet é um tema WordPress empresarial  que contém muitos recursos para personalizar seu site conforme você precisar. Milhares de usuários estão aproveitando esse tema porque ele é projetado para várias empresas, como corporações, escritórios de advocacia, agências de mídia digital, empresas de arquitetura, blogs pessoais, portfolio e sites de freelancer. O tema é desenvolvido usando a estrutura do CSS do Bootstrap 3, o que torna amigável para todos os dispositivos, como celulares, tablets e laptops, etc. No WallStreet Lite, você pode facilmente definir uma Banner / Slide , ícones sociais no cabeçalho, informações de contato, Serviços, portfólio e um rodapé de página com 4 colunas. Vários modelos de página também são adicionados: Página inicial e um modelo de página de Largura inteira. Na versão premium, você receberá 2 cores de paletas (Lite e Dark), 10 esquemas de cores predefinidos, um recurso para criar seu próprio esquema de cores personalizado, um slider atraente e blocos de Serviços, Depoimentos, Portfolio, Clientes/Patrocinadores, layouts de Blog, gerenciador de layouts e Últimas Notícias. Você também terá vários modelos de página, incluindo Sobre, Serviços, Portfolio, Blog e Contate-nos. O tema tem suporte para plugins populares, como WPML, Polylang e JetPack Gallery Extensions. Basta navegar até Aparência > Personalizar para começar a personalizar. As versões lite e premium do tema WallStreet vêm em vários idiomas. Verifique a demonstração do tema da versão premium em http://webriti.com/demo/wp/wallstreet"
-
 #. Theme Name of the plugin/theme
 msgid "Wallstreet"
 msgstr "Wallstreet"
@@ -22,10 +18,6 @@ msgstr "Wallstreet"
 #: functions/customizer/customizer-slider.php:62
 msgid "A state-of-the-art HTML5-powered flexible layout with lightspeed fast CSS3 transition effects. Works perfectly in any modern mobile."
 msgstr "Um layout estado-de-arte em HTML5-powered flexível, com efeitos de transição CSS3 rápidos como a velocidade da luz. Funciona perfeitamente em qualquer celular moderno."
-
-#: functions/customizer/customizer-copyright.php:15
-msgid "Copyright @ 2014 - WALL STREET Designed by <a href=\"%1$s\" target=\"_blank\">Webriti</a>."
-msgstr "Copyright @ 2014 - WALL STREET Criado por <a href=\"%1$s\" target=\"_blank\">Webriti</a>."
 
 #: functions/customizer/customizer-service.php:231
 msgid "Want to add more services? Then upgrade to Pro."
@@ -298,7 +290,7 @@ msgstr "Configurações da página Sobre"
 msgid "Upgrade to Pro"
 msgstr "Torne-se Pro"
 
-#: functions.php:95 functions.php:97
+#: functions.php:98 functions.php:100
 msgid "Sidebar widget area"
 msgstr "Área de widgets da barra lateral"
 
@@ -701,10 +693,6 @@ msgstr "Instalar plugins"
 msgid "Install Required Plugins"
 msgstr "Instalar plugins requeridos "
 
-#: theme_setup_data.php:87
-msgid "Copyright @ 2017 - WALL STREET Designed by <a href=\"%1$s\" target=\"_blank\">Webriti</a>."
-msgstr "Copyright @ 2017 - WALL STREET Criado por <a href=\"%1$s\" target=\"_blank\">Webriti</a>."
-
 #: functions/customizer/customizer-typography.php:470
 msgid "Widget heading title"
 msgstr "Título do cabeçalho do widget"
@@ -945,7 +933,7 @@ msgid "Easy to use"
 msgstr "Fácil de usar"
 
 #: functions/customizer/customizer-project.php:283
-msgid "Add More Project"
+msgid "Add More Projects"
 msgstr "Adicionar mais projetos"
 
 #: functions/customizer/customizer-project.php:296
@@ -1069,27 +1057,27 @@ msgstr "Anterior"
 msgid "Search results for: %s"
 msgstr "Resultados da pesquisa por: %s"
 
-#: functions.php:159
+#: functions.php:162
 msgid "Your comment is awaiting moderation."
 msgstr "Seu comentário está aguardando moderação."
 
-#: functions.php:154
+#: functions.php:157
 msgid "Edit"
 msgstr "Editar"
 
-#: functions.php:152
+#: functions.php:155
 msgid "Posted on &nbsp;"
 msgstr "Publicado em &nbsp;"
 
-#: functions.php:145
+#: functions.php:148
 msgid "Reply"
 msgstr "Responder"
 
-#: functions.php:105 functions.php:107
+#: functions.php:108 functions.php:110
 msgid "Footer widget area"
 msgstr "Área de widgets do rodapé"
 
-#: functions.php:70
+#: functions.php:73
 msgid "Primary Menu"
 msgstr "Menu principal"
 
@@ -1197,7 +1185,7 @@ msgid "Enable social media links on header section"
 msgstr "Ativar links de mídia social na seção de cabeçalho"
 
 #: archive.php:58 author.php:47 category.php:49
-#: functions/breadcrumbs/breadcrumbs.php:98 functions.php:53 index.php:53
+#: functions/breadcrumbs/breadcrumbs.php:98 functions.php:56 index.php:53
 #: single.php:31 tag.php:48
 msgid "Page"
 msgstr "Página"
@@ -1257,7 +1245,7 @@ msgstr[1] "%1$s pensamentos sobre &ldquo;%2$s&rdquo;"
 msgid "This post is password protected. Enter the password to view any comments."
 msgstr "Este post é protegido por senha. Digite a senha pra ver os comentários."
 
-#: archive.php:57 author.php:46 category.php:48 functions.php:87
+#: archive.php:57 author.php:46 category.php:48 functions.php:90
 #: index-blog.php:46 index.php:52 search.php:50 tag.php:47
 msgid "Read More"
 msgstr "Continue a ler"
@@ -1291,11 +1279,11 @@ msgid "Error 404"
 msgstr "Erro 404"
 
 #. Author URI of the plugin/theme
-msgid "http://www.webriti.com"
+msgid "https://www.webriti.com"
 msgstr "http://www.webriti.com"
 
 #. Theme URI of the plugin/theme
-msgid "http://webriti.com/wallstreet-lite-version-details-page/"
+msgid "https://webriti.com/wallstreet-lite-version-details-page/"
 msgstr "http://webriti.com/wallstreet-lite-version-details-page/"
 
 #. Author of the plugin/theme

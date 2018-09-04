@@ -220,7 +220,6 @@ $wp_customize->add_section( 'more_service' , array(
 		'priority'   => 400,
    	) );	
 	
-	
 class WP_service_Customize_Control extends WP_Customize_Control {
     public $type = 'new_menu';
     /**

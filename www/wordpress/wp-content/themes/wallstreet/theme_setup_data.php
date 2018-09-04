@@ -5,8 +5,6 @@ function theme_data_setup()
 	$service_image1 = WEBRITI_TEMPLATE_DIR_URI . "/images/service.jpg";
 	$service_image2 = WEBRITI_TEMPLATE_DIR_URI . "/images/service2.jpg";
 	$service_image3 = WEBRITI_TEMPLATE_DIR_URI . "/images/service3.jpg";
-	//editado aqui
-	$service_image4 = WEBRITI_TEMPLATE_DIR_URI . "/images/service4.jpg";
 	$portfolio_image1 = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio1.jpg";
 	$portfolio_image2 = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio2.jpg";
 	$portfolio_image3 = WEBRITI_TEMPLATE_DIR_URI . "/images/portfolio3.jpg";
@@ -42,10 +40,6 @@ function theme_data_setup()
 			'service_image_three' => $service_image3, 
 			'service_title_three'=> __('Responsive designs','wallstreet'),
 			'service_description_three' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.',
-//editado aqui também
-			'service_image_four' => $service_image4, 
-			'service_title_four'=> __('Responsive designs','wallstreet'),
-			'service_description_four' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl.',
 			
 			//portfolio
 			'portfolio_section_enabled' => true,
@@ -88,9 +82,10 @@ function theme_data_setup()
 			'social_media_googleplus_link' =>"#",
 			'social_media_linkedin_link' =>"#",		
 			'social_media_youtube_link' =>"#",
+			'social_media_instagram_link' => '#',
 			
 			/** footer customization **/
-			'footer_copyright' =>sprintf (__('Copyright @ 2017 - WALL STREET Designed by <a href="%1$s" target="_blank">Webriti</a>.','wallstreet'),'http://www.webriti.com'),
+			'footer_copyright' =>sprintf (__('Copyright @ 2018 - WALL STREET Designed by <a href="%1$s" target="_blank">Webriti</a>.','wallstreet'),'https://www.webriti.com'),
 		
 		);
 }

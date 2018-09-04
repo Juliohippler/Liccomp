@@ -67,22 +67,6 @@
 			<?php } ?>
 			</div><!-- / service-area -->
 		</div> <!-- / service-effect column -->
-
-		<div class="col-md-4 col-sm-6 service-effect">
-			<?php if($current_options['service_image_four']) { ?>
-			<div class="service-box">
-				<img class="img-responsive service-box-image" alt="Sleek &amp; Beautiful" src="<?php echo esc_url($current_options['service_image_four']); ?>">
-			</div>
-			<?php } ?>
-			<div class="service-area">
-			<?php if($current_options['service_title_four']) { ?>
-			<h2><a href="#"><?php echo esc_html($current_options['service_title_four']); ?></a></h2>
-			<?php } ?>
-			<?php if($current_options['service_description_four']) { ?>
-			<p><?php echo esc_html($current_options['service_description_four']); ?></p>
-			<?php } ?>
-			</div><!-- / service-area -->
-		</div> <!-- / service-effect column -->
 		
 	</div>	
 </div>
