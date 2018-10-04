@@ -3,4 +3,7 @@ instalar
 colcoar essa pasta www onde foi instalado o wampserver 
 rodar o wamp server
 
-Nao esqueça de importa o banco de dados "wp.sql" 
+abrir o adm do banco de dados phpmyadmin
+user: root
+nao tem senha
+importar o banco de dados com o nome "wp.sql" 
